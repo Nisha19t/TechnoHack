@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Calculator</title>
+    <style>
+        /* currency.css */
+
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.converter {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.input-container {
+    margin: 15px 0;
+}
+
+input[type="number"], input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+select {
+    appearance: none;
+}
+
+#convert {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+#convert:hover {
+    background-color: #555;
+/* } */
+/* currency.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.converter {
+
+    width: 100%;
+    
+    padding: 20px;
+    border-radius: 5px;
+    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    /* max-width: 600px; */
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.input-container {
+    margin: 15px 0;
+}
+
+label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color:#3e2020;
+}
+
+input[type="number"], input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+select {
+    appearance: none;
+}
+
+#convert {
+    height: 100%;
+    width: 100%;
+    /* outline: none; */
+    color: #fff;
+    /* border: none; */
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    /* border-radius: 5px; */
+    background-color: #323131;
+    cursor: pointer;
+     margin-top: 15px;
+     padding: 10px 20px;
+    /* background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    /* margin-top: 15px; */
+} 
+
+#convert:hover {
+    background-color: #555;
+}
+
+#result {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+    </style> 
+
+</head>
+<body>
+    <div class="converter">
+        <h1>Chose Currency to Convert</h1>
+       
+        <div class="input-container">
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" placeholder="Enter amount">
+        </div>
+        <div class="input-container">
+            <label for="fromCurrency">From</label>
+            <select id="fromCurrency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="JPY">JPY</option>
+                <option value="GBP">GBP</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="CHF">CHF</option>
+                <option value="CNY">CNY</option>
+                <option value="SEK">SEK</option>
+                <option value="NZD">NZD</option>
+                <option value="MXN">MXN</option>
+                <oaption value="SGD">SGD</option>
+                <option value="HKD">HKD</option>
+                <option value="NOK">NOK</option>
+                <option value="KRW">KRW</option>
+                <option value="TRY">TRY</option>
+                <option value="INR">INR</option>
+                <option value="BRL">BRL</option>
+                <option value="ZAR">ZAR</option>
+                <option value="RUB">RUB</option>
+                <option value="AED">AED</option>
+                <option value="PKR">PKR</option>
+                <option value="SAR">SAR</option>
+                <!-- Populate this select element with currency options -->
+                <!-- Example: <option value="USD">USD: United States Dollar</option> -->
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="toCurrency">To</label>
+            <select id="toCurrency">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="JPY">JPY</option>
+                <option value="GBP">GBP</option>
+                <option value="AUD">AUD</option>
+                <option value="CAD">CAD</option>
+                <option value="CHF">CHF</option>
+                <option value="CNY">CNY</option>
+                <option value="SEK">SEK</option>
+                <option value="NZD">NZD</option>
+                <option value="MXN">MXN</option>
+                <oaption value="SGD">SGD</option>
+                <option value="HKD">HKD</option>
+                <option value="NOK">NOK</option>
+                <option value="KRW">KRW</option>
+                <option value="TRY">TRY</option>
+                <option value="INR">INR</option>
+                <option value="BRL">BRL</option>
+                <option value="ZAR">ZAR</option>
+                <option value="RUB">RUB</option>
+                <option value="AED">AED</option>
+                <option value="PKR">PKR</option>
+                <option value="SAR">SAR</option>
+                <!-- Populate this select element with currency options -->
+                <!-- Example: <option value="EUR">EUR: Euro</option> -->
+            </select>
+        </div>
+        <button id="convert">Convert</button>
+        <input style="margin-top: 20px; padding: 20px 20px;" type="text" id="result" placeholder="Result" disabled>
+    </div>
+    <script>
+        // Define exchange rates (You can use an API for live rates)
+        const exchangeRates = {
+            USD: 1, // Base currency
+            EUR: 0.85,
+            JPY: 114.26,
+            GBP: 0.73,
+            AUD: 1.33,
+            CAD: 1.28,
+            CHF: 0.91,
+            CNY: 6.42,
+            SEK: 8.79,
+            NZD: 1.44,
+            MXN: 20.03,
+            SGD: 1.34,
+            HKD: 7.77,
+            NOK: 9.13,
+            KRW: 1177.23,
+            TRY: 14.40,
+            INR: 74.34,
+            BRL: 5.46,
+            ZAR: 15.01,
+            RUB: 84.98,
+            AED: 3.67,
+            PKR: 288.25,
+            SAR: 3.75
+        };
+
+        // Conversion function
+        function convertCurrency() {
+            const amount = parseFloat(document.getElementById("amount").value);
+            const from = document.getElementById("fromCurrency").value;
+            const to = document.getElementById("toCurrency").value;
+
+            if (isNaN(amount)) {
+                alert("Please enter a valid amount.");
+                return;
+            }
+
+            const result = (amount / exchangeRates[from]) * exchangeRates[to];
+            document.getElementById("result").value = result.toFixed(2);
+        }
+
+        // Attach event listener to the convert button
+        document.getElementById("convert").addEventListener("click", convertCurrency);
+    </script>
+</body>
+</html>
